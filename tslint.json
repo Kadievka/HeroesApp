@@ -1,0 +1,12 @@
+{
+  "extends": ["tslint:recommended", "tslint-sonarts"],
+  "defaultSeverity": "error",
+  "jsRules": {},
+  "rules": {
+    "align": [true, "statements"],
+    "one-variable-per-declaration": true,
+    "no-consecutive-blank-lines": true,
+    "no-console": false
+  },
+  "rulesDirectory": []
+}
