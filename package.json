@@ -19,12 +19,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier --write",
-    "prepare": "husky install"
+    "husky-install": "husky install",
+    "lint": "eslint src --color",
+    "lint-staged": "lint-staged --config lint-staged.js",
+    "prettier": "prettier src -check",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "typescript": "tsc --project tsconfig.json --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -56,9 +59,13 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint",
-      "npm run prettier"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "react-scripts test --bail --watchAll=false --findRelatedTests --passWithNoTests",
+      "tsc-files --noEmit"
+    ],
+    "*.{js,jsx,ts,tsx,json,css,js}": [
+      "prettier --write"
     ]
   }
 }
