@@ -11,7 +11,8 @@ const DashboardRouter = () => {
     <>
       <Navbar />
 
-      <Routes>
+      <div className="container">
+        <Routes>
 
         <Route path="marvel" element={<MarvelScreen />} />
         <Route path="dc" element={<DcScreen />} />
@@ -21,7 +22,8 @@ const DashboardRouter = () => {
 
         <Route path="/" element={<MarvelScreen />} />
 
-      </Routes>
+        </Routes>
+      </div>
     </>
   )
 }
