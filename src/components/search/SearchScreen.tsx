@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import getHeroesByName from "../../helpers/utils/getHeroesByName";
 import { useForm } from "../../hooks/useForm/useForm";
+import Hero from "../../interfaces/Hero";
+import HeroCard from "../hero/HeroCard";
 
 const SearchScreen = () => {
-  const initialState = {
+  const [{ searchText }, handleInputChange, resetForm] = useForm({
     searchText: "",
-  };
+  });
 
-  const [{ searchText }, handleInputChange, resetFormValues] = useForm(initialState);
+  const [heroes, setHeroes] = useState<Hero[]>();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (searchText) {
-      console.log("buscando...", searchText);
+      setHeroes([...getHeroesByName(searchText)]);
     }
 
-    resetFormValues();
+    resetForm();
   };
+
+  console.log(heroes);
 
   return (
     <>
@@ -41,6 +46,15 @@ const SearchScreen = () => {
               Buscar...
             </button>
           </form>
+        </div>
+
+        <div className="col-7">
+          <h4>Encontrados</h4>
+          <hr />
+
+          {heroes?.map((hero) => (
+            <HeroCard key={hero.id} {...hero} />
+          ))}
         </div>
       </div>
     </>
