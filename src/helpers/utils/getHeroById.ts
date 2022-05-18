@@ -1,6 +1,6 @@
 import heroes from "../../data/heroes";
-import Hero from "../../interfaces/Heroe";
+import Hero from "../../interfaces/Hero";
 
-export default function getHeroByID(id: string): Hero | undefined {
-  return heroes.find((hero) => hero.id === id);
+export default function getHeroById(id?: string): Hero | undefined {
+  return id ? heroes.find((h) => h.id === id) : undefined;
 }

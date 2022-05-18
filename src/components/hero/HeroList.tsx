@@ -1,11 +1,11 @@
 import React from "react";
 import getHeroesByPublisher from "../../helpers/utils/getHeroesByPublisher";
-import Heroe from "../../interfaces/Heroe";
+import Hero from "../../interfaces/Hero";
 import HeroListPropsInterface from "../../interfaces/HeroListPropsInterface";
 import HeroCard from "./HeroCard";
 
 const HeroList = ({ publisher }: HeroListPropsInterface) => {
-  const heroes: Heroe[] = getHeroesByPublisher(publisher);
+  const heroes: Hero[] = getHeroesByPublisher(publisher);
 
   return (
     <div className="card-columns">

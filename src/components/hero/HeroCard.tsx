@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Hero from "../../interfaces/Heroe";
+import Hero from "../../interfaces/Hero";
 
 const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance, characters }: Hero) => {
   const imagePath = `${process.env.PUBLIC_URL}/assets/images/heroes/${id}.jpg`;

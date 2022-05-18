@@ -1,6 +1,6 @@
-import Heroe from "../interfaces/Heroe";
+import Hero from "../interfaces/Hero";
 
-const heroes: Heroe[] = [
+const heroes: Hero[] = [
   {
     id: "dc-batman",
     superhero: "Batman",
