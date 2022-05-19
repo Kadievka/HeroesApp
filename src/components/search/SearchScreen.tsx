@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import getHeroesByName from "../../helpers/utils/getHeroesByName";
@@ -15,7 +15,7 @@ const SearchScreen = () => {
     searchText: q,
   });
 
-  const heroes: Hero[] = getHeroesByName(q as string);
+  const heroes: Hero[] = useMemo(() => getHeroesByName(q as string), [q]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,8 +49,15 @@ const SearchScreen = () => {
         </div>
 
         <div className="col-7">
-          <h4>Encontrados</h4>
+          <h4>Resultados</h4>
+
           <hr />
+
+          {q === "" ? (
+            <div className="alert alert-info">Buscar un héroe</div>
+          ) : (
+            !heroes.length && <div className="alert alert-info">No hay coincidencias para &quot;{q}&quot;</div>
+          )}
 
           {heroes?.map((hero) => (
             <HeroCard key={hero.id} {...hero} />
