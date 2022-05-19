@@ -1,7 +1,6 @@
-import React from "react";
+import { createContext } from "react";
+import AuthReducerStateInterface from "../interfaces/auth/AuthReducerStateInterface";
 
-const authContext = () => {
-  return <div>authContext</div>;
-};
+const AuthContext = createContext({} as AuthReducerStateInterface);
 
-export default authContext;
+export default AuthContext;
