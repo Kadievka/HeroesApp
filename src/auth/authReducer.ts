@@ -10,7 +10,7 @@ const authReducer = (state: AuthReducerStateInterface, action: AuthReducerAction
         logged: true,
       };
 
-    case AuthActionEnum.LOGIN:
+    case AuthActionEnum.LOGOUT:
       return {
         ...action.payload,
         logged: false,
