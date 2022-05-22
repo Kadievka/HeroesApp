@@ -6,7 +6,7 @@ const ErrorScreen = () => {
 
   return (
     <div data-testid="error-screen-container">
-      <h4>Error 404: No se encontró &quot;{`${pathname}`}&quot;</h4>
+      <h4 data-testid="error-404-message">Error 404: No se encontró &quot;{`${pathname}`}&quot;</h4>
     </div>
   );
 };
