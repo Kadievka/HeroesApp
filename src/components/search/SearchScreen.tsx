@@ -24,7 +24,7 @@ const SearchScreen = () => {
   };
 
   return (
-    <>
+    <div data-testid="search-screen-container">
       <h1>Búsquedas</h1>
 
       <div className="row">
@@ -64,7 +64,7 @@ const SearchScreen = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

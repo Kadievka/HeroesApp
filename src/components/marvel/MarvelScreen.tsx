@@ -4,7 +4,7 @@ import HeroList from "../hero/HeroList";
 
 const MarvelScreen = () => {
   return (
-    <div>
+    <div data-testid="marvel-screen-container">
       <h1>MarvelScreen</h1>
 
       <HeroList publisher={PublisherEnum.MARVEL_COMICS} />

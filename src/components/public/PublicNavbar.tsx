@@ -5,7 +5,7 @@ const PublicNavbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark" data-testid="public-navbar-container">
       <Link className="navbar-brand" to="/">
         Asociaciones
       </Link>

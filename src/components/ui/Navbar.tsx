@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark" data-testid="private-navbar-container">
       <Link className="navbar-brand" to="/">
         Asociaciones
       </Link>

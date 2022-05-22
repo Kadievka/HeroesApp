@@ -22,7 +22,7 @@ const HeroScreen = () => {
   const imagePath = `${process.env.PUBLIC_URL}/assets/images/heroes/${id}.jpg`;
 
   return (
-    <div className="row mt-5">
+    <div className="row mt-5" data-testid="hero-screen-container">
       <div className="col-4">
         <img src={imagePath} className="img-thumbnail animate__animated animate__fadeInLeft" alt={superhero} />
       </div>

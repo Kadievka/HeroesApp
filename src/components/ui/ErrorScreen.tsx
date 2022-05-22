@@ -5,7 +5,7 @@ const ErrorScreen = () => {
   const { pathname }: Location = useLocation();
 
   return (
-    <div>
+    <div data-testid="error-screen-container">
       <h4>Error 404: No se encontró &quot;{`${pathname}`}&quot;</h4>
     </div>
   );

@@ -6,7 +6,7 @@ const HeroCard = ({ id, superhero, alter_ego, characters }: Hero) => {
   const imagePath = `${process.env.PUBLIC_URL}/assets/images/heroes/${id}.jpg`;
 
   return (
-    <div className="col animate__animated animate__fadeIn">
+    <div className="col animate__animated animate__fadeIn" data-testid="hero-card-container">
       <div className="card">
         <div className="row no-gutters">
           <div className="col-4">
