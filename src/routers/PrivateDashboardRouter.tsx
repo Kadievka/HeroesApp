@@ -18,7 +18,7 @@ const PrivateDashboardRouter = () => {
     <>
       <Navbar />
 
-      <div className="container">
+      <div className="container" data-testid="private-dashboard-container">
         <Routes>
           <Route path="/" element={<MarvelScreen />} />
           <Route path="/login" element={<MarvelScreen />} />

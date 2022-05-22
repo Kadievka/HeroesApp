@@ -11,7 +11,7 @@ const PublicDashboardRouter = () => {
     <>
       <PublicNavbar />
 
-      <div className="container">
+      <div className="container" data-testid="public-dashboard-container">
         <Routes>
           <Route path="/" element={<LoginScreen />} />
           <Route path="/login" element={<LoginScreen />} />
