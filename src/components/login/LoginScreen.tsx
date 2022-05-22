@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import AuthContext from "../../auth/authContext";
 import { AuthActionEnum } from "../../enum/auth/AuthActionEnum";
 import AuthContextInterface from "../../interfaces/auth/AuthContextInterface";
@@ -8,7 +8,9 @@ import AuthReducerActionInterface from "../../interfaces/auth/AuthReducerActionI
 const LoginScreen = () => {
   const { dispatch }: AuthContextInterface = useContext(AuthContext);
 
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
+
+  const lastPath: string = localStorage.getItem("lastPath") || "/";
 
   const handleLogin = () => {
     const action: AuthReducerActionInterface = {
@@ -21,9 +23,7 @@ const LoginScreen = () => {
 
     dispatch(action);
 
-    navigate("/", {
-      replace: true,
-    });
+    navigate(lastPath === "/login" ? "/" : `${lastPath}`);
   };
 
   return (
