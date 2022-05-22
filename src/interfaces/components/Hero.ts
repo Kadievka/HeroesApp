@@ -1,4 +1,4 @@
-import { PublisherEnum } from "../enum/PublisherEnum";
+import { PublisherEnum } from "../../enum/PublisherEnum";
 
 export default interface Hero {
   id: string;

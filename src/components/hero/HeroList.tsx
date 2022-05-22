@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import getHeroesByPublisher from "../../helpers/utils/getHeroesByPublisher";
-import Hero from "../../interfaces/Hero";
-import HeroListPropsInterface from "../../interfaces/HeroListPropsInterface";
+import Hero from "../../interfaces/components/Hero";
+import HeroListPropsInterface from "../../interfaces/components/HeroListPropsInterface";
 import HeroCard from "./HeroCard";
 
 const HeroList = ({ publisher }: HeroListPropsInterface) => {

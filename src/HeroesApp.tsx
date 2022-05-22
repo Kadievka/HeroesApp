@@ -14,11 +14,7 @@ const HeroesApp = () => {
   const init = () => {
     const stringUser = localStorage.getItem("user");
 
-    if (stringUser) {
-      return JSON.parse(stringUser);
-    }
-
-    return defaultUser;
+    return stringUser ? JSON.parse(stringUser) : defaultUser;
   };
 
   const [user, dispatch] = useReducer(authReducer, {}, init);

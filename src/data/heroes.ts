@@ -1,4 +1,4 @@
-import Hero from "../interfaces/Hero";
+import Hero from "../interfaces/components/Hero";
 
 const heroes: Hero[] = [
   {
