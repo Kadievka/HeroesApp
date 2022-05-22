@@ -2,7 +2,7 @@ import { AuthActionEnum } from "../enum/auth/AuthActionEnum";
 import AuthReducerActionInterface from "../interfaces/auth/AuthReducerActionInterface";
 import AuthReducerStateInterface from "../interfaces/auth/AuthReducerStateInterface";
 
-const authReducer = (state: AuthReducerStateInterface, action: AuthReducerActionInterface): AuthReducerStateInterface => {
+const authReducer = (_state: AuthReducerStateInterface, action: AuthReducerActionInterface): AuthReducerStateInterface => {
   switch (action.type) {
     case AuthActionEnum.LOGIN:
       return {
@@ -16,8 +16,6 @@ const authReducer = (state: AuthReducerStateInterface, action: AuthReducerAction
         logged: false,
       };
   }
-
-  return state;
 };
 
 export default authReducer;

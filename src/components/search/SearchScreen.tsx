@@ -2,9 +2,9 @@ import React, { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import getHeroesByName from "../../helpers/utils/getHeroesByName";
-import { useForm } from "../../hooks/useForm/useForm";
 import Hero from "../../interfaces/components/Hero";
 import HeroCard from "../hero/HeroCard";
+import { useForm } from "../../hooks/useForm";
 
 const SearchScreen = () => {
   const navigate = useNavigate();
