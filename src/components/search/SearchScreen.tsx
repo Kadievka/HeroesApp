@@ -29,7 +29,7 @@ const SearchScreen = () => {
 
       <div className="row">
         <div className="col-5">
-          <h4>Buscar</h4>
+          <h4 data-testid="search-screen-title">Buscar</h4>
           <hr />
 
           <form onSubmit={handleSubmit}>
@@ -41,22 +41,29 @@ const SearchScreen = () => {
               autoComplete="off"
               onChange={handleInputChange}
               value={searchText}
+              data-testid="search-screen-input"
             />
-            <button type="submit" className="btn btn-outline-primary mt-1">
+            <button type="submit" className="btn btn-outline-primary mt-1" data-testid="search-screen-button">
               Buscar...
             </button>
           </form>
         </div>
 
         <div className="col-7">
-          <h4>Resultados</h4>
+          <h4 data-testid="search-screen-results">Resultados</h4>
 
           <hr />
 
           {q === "" ? (
-            <div className="alert alert-info">Buscar un héroe</div>
+            <div className="alert alert-info" data-testid="search-screen-alert">
+              Buscar un héroe
+            </div>
           ) : (
-            !heroes.length && <div className="alert alert-info">No hay coincidencias para &quot;{q}&quot;</div>
+            !heroes.length && (
+              <div className="alert alert-info" data-testid="search-screen-alert-not-found">
+                No hay coincidencias para &quot;{q}&quot;
+              </div>
+            )
           )}
 
           {heroes?.map((hero) => (
