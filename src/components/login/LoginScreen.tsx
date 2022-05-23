@@ -31,7 +31,7 @@ const LoginScreen = () => {
       <h1>LoginScreen</h1>
       <hr />
 
-      <button className="btn btn-primary" onClick={handleLogin}>
+      <button className="btn btn-primary" onClick={handleLogin} data-testid="login-screen-button">
         Login
       </button>
     </div>
