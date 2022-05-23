@@ -21,7 +21,7 @@ describe("Navbar unit tests", () => {
 
   it("should render the Navbar Component", () => {
     const defaultUser: AuthReducerStateInterface = {
-      name: "mock-name",
+      name: "Pedro",
       logged: true,
     };
 
@@ -47,9 +47,11 @@ describe("Navbar unit tests", () => {
     const marvelTitle = screen.getByTestId("marvel-screen-title");
     const container = screen.queryByTestId("private-navbar-container");
     const button = screen.queryByTestId("private-navbar-logout-button");
+    const userName = screen.getByTestId("private-navbar-user-name");
 
     expect(wrapper.asFragment()).toMatchSnapshot();
 
+    expect(userName.innerHTML.trim()).toBe("Pedro");
     expect(marvelTitle.innerHTML.trim()).toBe("MarvelScreen");
 
     expect(container).not.toBe(null);
