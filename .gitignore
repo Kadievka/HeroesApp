@@ -25,4 +25,4 @@ yarn-error.log*
 __snapshots__**
 
 /package-lock.json
-/scr/assets/**
+/scr/assets/images/**
