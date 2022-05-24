@@ -68,5 +68,12 @@
     "*.{js,jsx,ts,tsx,json,css,js}": [
       "prettier --write"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.tsx",
+      "!src/HeroesApp.tsx",
+      "!src/tests/**"
+    ]
   }
 }

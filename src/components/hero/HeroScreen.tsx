@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
-import { Navigate, useParams } from "react-router";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import getHeroById from "../../helpers/utils/getHeroById";
 import Hero from "../../interfaces/components/Hero";
 
@@ -24,7 +23,12 @@ const HeroScreen = () => {
   return (
     <div className="row mt-5" data-testid="hero-screen-container">
       <div className="col-4">
-        <img src={imagePath} className="img-thumbnail animate__animated animate__fadeInLeft" alt={superhero} />
+        <img
+          src={imagePath}
+          className="img-thumbnail animate__animated animate__fadeInLeft"
+          alt={superhero}
+          data-testid="hero-screen-image"
+        />
       </div>
 
       <div className="col-8 animate__animated animate__fadeIn">
@@ -45,7 +49,7 @@ const HeroScreen = () => {
         <h5 className="mt-3">Characters</h5>
         <p>{characters}</p>
 
-        <button className="btn btn-outline-info" onClick={handleReturn}>
+        <button className="btn btn-outline-info" onClick={handleReturn} data-testid="hero-screen-return-button">
           Return
         </button>
       </div>
