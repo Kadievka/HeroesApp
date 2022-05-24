@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import DcScreen from "../components/dc/DcScreen";
 import HeroScreen from "../components/hero/HeroScreen";
 import MarvelScreen from "../components/marvel/MarvelScreen";
+import AboutScreen from "../components/public/AboutScreen";
+import BlogScreen from "../components/public/BlogScreen";
 import SearchScreen from "../components/search/SearchScreen";
 import ErrorScreen from "../components/ui/ErrorScreen";
 import Navbar from "../components/ui/Navbar";
@@ -21,8 +23,11 @@ const PrivateDashboardRouter = () => {
       <div className="container" data-testid="private-dashboard-container">
         <Routes>
           <Route path="/" element={<MarvelScreen />} />
-          <Route path="/login" element={<MarvelScreen />} />
           <Route path="marvel" element={<MarvelScreen />} />
+          <Route path="/login" element={<MarvelScreen />} />
+
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/blog" element={<BlogScreen />} />
 
           <Route path="dc" element={<DcScreen />} />
           <Route path="search" element={<SearchScreen />} />

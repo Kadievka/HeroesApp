@@ -3,6 +3,8 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import getHeroById from "../../helpers/utils/getHeroById";
 import Hero from "../../interfaces/components/Hero";
 
+const heroImages = require.context(`../../../public/assets/images/heroes`);
+
 const HeroScreen = () => {
   const navigate = useNavigate();
 
@@ -18,13 +20,11 @@ const HeroScreen = () => {
 
   const { id, superhero, publisher, alter_ego, first_appearance, characters } = hero;
 
-  const imagePath = `${process.env.PUBLIC_URL}/assets/images/heroes/${id}.jpg`;
-
   return (
     <div className="row mt-5" data-testid="hero-screen-container">
       <div className="col-4">
         <img
-          src={imagePath}
+          src={heroImages(`./${id}.jpg`)}
           className="img-thumbnail animate__animated animate__fadeInLeft"
           alt={superhero}
           data-testid="hero-screen-image"

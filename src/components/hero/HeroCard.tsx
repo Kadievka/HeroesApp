@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Hero from "../../interfaces/components/Hero";
 
-const HeroCard = ({ id, superhero, alter_ego, characters }: Hero) => {
-  const imagePath = `${process.env.PUBLIC_URL}/assets/images/heroes/${id}.jpg`;
+const heroImages = require.context(`../../../public/assets/images/heroes`);
 
+const HeroCard = ({ id, superhero, alter_ego, characters }: Hero) => {
   return (
     <div className="col animate__animated animate__fadeIn" data-testid="hero-card-container">
       <div className="card">
         <div className="row no-gutters">
           <div className="col-4">
-            <img src={imagePath} className="card-img" alt={superhero} />
+            <img src={heroImages(`./${id}.jpg`)} className="card-img" alt={superhero} />
           </div>
           <div className="col-8">
             <div className="card-body">
