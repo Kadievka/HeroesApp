@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import heroImages from "../../helpers/utils/heroImages";
 import Hero from "../../interfaces/components/Hero";
-
-const heroImages = require.context(`../../assets/images/heroes`);
 
 const HeroCard = ({ id, superhero, alter_ego, characters }: Hero) => {
   return (

@@ -1,9 +1,8 @@
 import React, { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import getHeroById from "../../helpers/utils/getHeroById";
+import heroImages from "../../helpers/utils/heroImages";
 import Hero from "../../interfaces/components/Hero";
-
-const heroImages = require.context(`../../assets/images/heroes`);
 
 const HeroScreen = () => {
   const navigate = useNavigate();
