@@ -3,7 +3,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import getHeroById from "../../helpers/utils/getHeroById";
 import Hero from "../../interfaces/components/Hero";
 
-const heroImages = require.context(`../../../public/assets/images/heroes`);
+const heroImages = require.context(`../../assets/images/heroes`);
 
 const HeroScreen = () => {
   const navigate = useNavigate();
